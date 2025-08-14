@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # 安装 Java (OpenJDK 8)
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    openjdk-8-jdk \
+    openjdk-11-jdk \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt
 COPY --from=go-judge /opt/go-judge /opt/mount.yaml /opt/
