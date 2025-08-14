@@ -6,6 +6,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
+    # 安装 Java (OpenJDK 8)
+RUN apt-get install openjdk-11-jdk \
+    && rm -rf /var/lib/apt/lists/*
+
 # 安装 C/C++ 编译器 (GCC/G++)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     g++ \
@@ -18,10 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-# 安装 Java (OpenJDK 8)
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    openjdk-17-jdk \
-    && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /opt
 COPY --from=go-judge /opt/go-judge /opt/mount.yaml /opt/
 EXPOSE 5050/tcp 5051/tcp 5052/tcp
