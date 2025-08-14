@@ -6,9 +6,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-    # 安装 Java (OpenJDK 8)
-RUN apt update && apt install openjdk-11-jdk  \
-    && rm -rf /var/lib/apt/lists/*
 
 # 安装 C/C++ 编译器 (GCC/G++)
 RUN apt-get update && apt-get install -y --no-install-recommends \
