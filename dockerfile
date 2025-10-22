@@ -1,0 +1,1 @@
+FROM openstackdev/openstack:latest
